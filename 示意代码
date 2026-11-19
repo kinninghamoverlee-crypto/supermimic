@@ -1,0 +1,16 @@
+# 示意：混合动作空间
+# policy_out: 策略网络输出
+# ref_action: 参考轨迹当前帧关节角
+
+upper_idx = [...]   # 躯干、手臂
+leg_idx   = [...]   # 髋、膝、踝
+
+final_action = ref_action.copy()
+
+# 上身：参考角 + 策略修正量
+final_action[upper_idx] = ref_action[upper_idx] + policy_out[upper_idx]
+
+# 腿：策略直接输出绝对目标角
+final_action[leg_idx] = policy_out[leg_idx]
+
+env.step(final_action)

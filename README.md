@@ -1,3 +1,4 @@
+Team reproduction model weights: https://huggingface.co/RayZhao/supermimic_getup
 # SuperMimic
 
 [Project page](https://supermimic.github.io) | [Paper](https://arxiv.org/abs/2610.28480)
